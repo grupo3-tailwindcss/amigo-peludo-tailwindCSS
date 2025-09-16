@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/script/script.js"></script>
-    <script src="assets/script/carrossel.js"></script>
+    <script src="assets/script/carrossel.js"></script> <!-- Script do carrossel não exportar para outros arquivos -->
 
-    <!-- Tailwind Config -->
+    <!-- Tailwind Config Paleta de cores -->
     <script>
   tailwind.config = {
     darkMode: "class",
@@ -97,15 +97,7 @@
         </button>
 
         <!-- Botão hambúrguer -->
-        <button
-          id="menuToggle"
-          class="text-white text-2xl"
-          aria-controls="mobileMenu"
-          aria-expanded="false"
-          aria-label="Abrir menu de navegação"
-        >
-          ☰
-        </button>
+        <button id="menuToggle" class="text-white text-2xl" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu de navegação">☰</button>
       </div>
 
       <!-- 🍔 Menu hambúrguer flutuante -->
@@ -217,8 +209,7 @@
         <h2 class="text-2xl font-bold mb-4 text-center">Por que adotar?</h2>
         <p class="mb-4 text-center">Cada adoção muda duas vidas: a do pet e a sua. Venha conhecer nossos peludos!</p>
         <div class="flex justify-center">
-          <button onclick="toggleModal(false)"
-            class="bg-amigoPeludo-500 dark:bg-amigoPeludo-800 text-white px-6 py-2 rounded-lg hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 active:scale-95 transition-all">
+          <button onclick="toggleModal(false)"class="bg-amigoPeludo-500 dark:bg-amigoPeludo-800 text-white px-6 py-2 rounded-lg hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 active:scale-95 transition-all">
             Fechar
           </button>
         </div>
