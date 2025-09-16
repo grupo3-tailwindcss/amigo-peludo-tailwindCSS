@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/script/script.js"></script>
+    <script src="assets/script/carrossel.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          fundo: "#0f172a",
+          texto: "#f1f5f9",
+          amigoPeludo: {
+            500: "#22c55e",
+            600: "#16a34a",
+            700: "#15803d",
+            300: "#16a34b",
+            800: "#14532d",
+          },
+        },
+        fontFamily: {
+          nunito: ["Nunito", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<!-- Estilos para a barra de rolagem -->
+<style>
+  #carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+#carousel-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#carousel-container::-webkit-scrollbar-thumb {
+  background-color: #10b981; /* emerald-500 */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#carousel-container::-webkit-scrollbar-thumb:hover {
+  background-color: #059669; /* emerald-600 */
+}
+
+/* Modo escuro */
+.dark #carousel-container::-webkit-scrollbar-thumb {
+  background-color: #065f46; /* emerald-800 */
+}
+
+.dark #carousel-container::-webkit-scrollbar-thumb:hover {
+  background-color: #064e3b; /* emerald-900 */
+}
+</style>
+
+
+    <title>Amigo Peludo</title>
+  </head>
+  <body class="font-nunito bg-white dark:bg-fundo text-black dark:text-texto min-h-screen flex flex-col">
+
+<header class="bg-amigoPeludo-600 dark:bg-amigoPeludo-800 text-white p-4 shadow-[0_10px_10px_-10px_rgba(0,0,0,0.4)]">
+  <div class="flex justify-between items-center">
+    <!-- 🐾 Logo -->
+    <h1 class="text-3xl font-bold font-[Quicksand]">Amigo Peludo</h1>
+
+    <!-- 🌙 Tema + ☰ Menu -->
+    <div class="relative flex items-center gap-4">
+      
+      <!-- Menu desktop -->
+      <nav class="hidden sm:flex sm:space-x-6 sm:items-center" aria-label="Menu de navegação">
+        <a href="index.html" class="hover:underline text-lg">Início</a>
+        <a href="sobre.html" class="hover:underline text-lg">Sobre</a>
+        <a href="pets.html" class="hover:underline text-lg">Pets</a>
+        <a href="contato.html" class="hover:underline text-lg">Contato</a>
+      </nav>
+
+      <!-- Botão tema (desktop) -->
+      <button id="trdThemeBtn" class="hidden sm:block text-white" aria-label="Alternar tema">
+        <img id="themeIcon" src="./assets/img/modo-claro.png" alt="Tema escuro" width="24" height="24" />
+      </button>
+
+      <!-- Botões mobile: tema + hambúrguer -->
+      <div class="flex sm:hidden items-center gap-4">
+        <!-- Botão tema (mobile) -->
+        <button id="trdThemeBtnMobile" class="text-white" aria-label="Alternar tema">
+          <img id="themeIconMobile" src="./assets/img/modo-claro.png" alt="Tema escuro" width="24" height="24" />
+        </button>
+
+        <!-- Botão hambúrguer -->
+        <button
+          id="menuToggle"
+          class="text-white text-2xl"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          aria-label="Abrir menu de navegação"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- 🍔 Menu hambúrguer flutuante -->
+     <nav id="mobileMenu" class="hidden absolute top-full right-0 mt-2 w-44 flex flex-col space-y-2 bg-green-700/80 dark:bg-green-900/80 backdrop-blur-md text-white text-right p-3 rounded-md shadow-lg transition-all duration-300 sm:hidden z-50" aria-label="Menu de navegação">
+
+        <a href="index.html" class="hover:underline text-base">Início</a>
+        <a href="sobre.html" class="hover:underline text-base">Sobre</a>
+        <a href="pets.html" class="hover:underline text-base">Pets</a>
+        <a href="contato.html" class="hover:underline text-base">Contato</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+</header>
+
+    <!-- 🐾 Hero Section -->
+    <main class="flex-grow p-6">
+      <section class="text-center max-w-2xl mx-auto">
+        <h2 class="text-amigoPeludo-500 dark:text-amigoPeludo-800 font-bold text-3xl sm:text-4xl">Adote um Amigo!</h2>
+        <p class="text-lg sm:text-xl mt-2">Transforme a vida de um cãozinho e ganhe um companheiro fiel.</p>
+        <a href="pets.html"
+          class="inline-block mt-6 bg-amigoPeludo-500 dark:bg-amigoPeludo-800 text-white px-6 py-3 rounded-lg shadow-md hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 active:scale-95 transition-all">
+          Ver pets disponíveis
+        </a>
+      </section>
+
+      <!-- 🖼️ Carrossel Animado -->
+<section id="carousel-container" class="relative mt-10 max-w-[980px] mx-auto overflow-x-auto scroll-smooth">
+  <div id="carousel" class="flex gap-4 w-max transition-transform duration-700 ease-in-out">
+    
+    <!-- Pet 1 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Luna.png" alt="Pet 1" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Luna</h3>
+      <p class="text-sm">2 anos • ♀️</p>
+    </div>
+
+    <!-- Pet 2 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Thor.png" alt="Pet 2" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Thor</h3>
+      <p class="text-sm">3 anos • ♂️</p>
+    </div>
+
+    <!-- Pet 3 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Mel.png" alt="Pet 3" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Mel</h3>
+      <p class="text-sm">1 ano • ♀️</p>
+    </div>
+
+    <!-- Pet 4 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Bob.png" alt="Pet 4" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Bob</h3>
+      <p class="text-sm">4 anos • ♂️</p>
+    </div>
+
+    <!-- Pet 5 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Nina.png" alt="Pet 5" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Nina</h3>
+      <p class="text-sm">2 anos • ♀️</p>
+    </div>
+
+    <!-- Pet 6 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Max.png" alt="Pet 6" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Max</h3>
+      <p class="text-sm">5 anos • ♂️</p>
+    </div>
+
+    <!-- Pet 7 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Bela.png" alt="Pet 7" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Bela</h3>
+      <p class="text-sm">3 anos • ♀️</p>
+    </div>
+
+    <!-- Pet 8 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Fred.png" alt="Pet 8" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Fred</h3>
+      <p class="text-sm">6 anos • ♂️</p>
+    </div>
+
+    <!-- Pet 9 -->
+    <div class="min-w-[300px] p-2 text-center flex-shrink-0">
+      <img src="assets/img/Amora.png" alt="Pet 9" class="h-[300px] w-[300px] object-cover rounded-xl shadow-lg" />
+      <h3 class="mt-2 font-bold text-lg">Amora</h3>
+      <p class="text-sm">1 ano • ♀️</p>
+    </div>
+
+  </div>
+</section>
+
+      <!-- 📢 Chamada para ação -->
+      <div class="text-center mt-12">
+        <button onclick="toggleModal(true)"
+          class="bg-amigoPeludo-500 dark:bg-amigoPeludo-800 px-6 py-3 text-white rounded-lg shadow-md hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 active:scale-95 transition-all">
+          Saiba mais
+        </button>
+      </div>
+
+      <!-- 💬 Modal -->
+      <dialog id="modal"
+        class="rounded-xl p-6 shadow-xl backdrop:bg-black/50 w-[90%] max-w-md dark:bg-gray-900 dark:text-white">
+        <h2 class="text-2xl font-bold mb-4 text-center">Por que adotar?</h2>
+        <p class="mb-4 text-center">Cada adoção muda duas vidas: a do pet e a sua. Venha conhecer nossos peludos!</p>
+        <div class="flex justify-center">
+          <button onclick="toggleModal(false)"
+            class="bg-amigoPeludo-500 dark:bg-amigoPeludo-800 text-white px-6 py-2 rounded-lg hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 active:scale-95 transition-all">
+            Fechar
+          </button>
+        </div>
+      </dialog>
+    </main>
+
+    <!-- 📌 Rodapé -->
+    <footer class="bg-gray-100 dark:bg-gray-900 text-center p-4 mt-auto shadow-[0_10px_20px_rgba(0,0,0,0.40)]">
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        © 2025 Amigo Peludo - Todos os direitos reservados
+      </p>
+    </footer>
+
+  </body>
+</html>
