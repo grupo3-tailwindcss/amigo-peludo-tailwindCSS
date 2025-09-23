@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adote um Amigo - Amigo Peludo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            fundo: "#0f172a",
+            texto: "#f1f5f9",
+            amigoPeludo: {
+              500: "#22c55e",
+              600: "#16a34a",
+              700: "#15803d",
+              800: "#14532d",
+            },
+          },
+          fontFamily: {
+            nunito: ["Nunito", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-nunito bg-white dark:bg-fundo text-black dark:text-texto min-h-screen flex flex-col">
+
+<!-- header igual ao index -->
+<header class="bg-amigoPeludo-600 dark:bg-amigoPeludo-800 text-white p-4 shadow-[0_10px_10px_-10px_rgba(0,0,0,0.4)]">
+  <div class="flex justify-between items-center">
+    <h1 class="text-3xl font-bold font-[Quicksand]">Amigo Peludo</h1>
+    <nav class="space-x-4">
+      <a href="index.html" class="hover:underline">Início</a>
+      <a href="adocao.html" class="hover:underline">Adoção</a>
+      <a href="sobre.html" class="hover:underline">Sobre</a>
+      <a href="contato.html" class="hover:underline">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="flex-grow p-6">
+  <section class="text-center max-w-3xl mx-auto">
+    <h2 class="text-amigoPeludo-500 dark:text-amigoPeludo-800 font-bold text-3xl sm:text-4xl">Cães Disponíveis para Adoção</h2>
+    <p class="mt-2 text-lg sm:text-xl">Escolha um amigo peludo e transforme a vida dele e a sua!</p>
+  </section>
+
+  <!-- grid dos pets -->
+  <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="assets/img/Luna.png" alt="Luna" class="h-64 w-full object-cover rounded-lg mb-2">
+      <h3 class="font-bold text-xl">Luna</h3>
+      <p>2 anos • ♀️</p>
+      <button class="mt-2 bg-amigoPeludo-500 dark:bg-amigoPeludo-800 text-white px-4 py-2 rounded-lg hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 transition-all">Adotar</button>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="assets/img/Thor.png" alt="Thor" class="h-64 w-full object-cover rounded-lg mb-2">
+      <h3 class="font-bold text-xl">Thor</h3>
+      <p>3 anos • ♂️</p>
+      <button class="mt-2 bg-amigoPeludo-500 dark:bg-amigoPeludo-800 text-white px-4 py-2 rounded-lg hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 transition-all">Adotar</button>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="assets/img/Mel.png" alt="Mel" class="h-64 w-full object-cover rounded-lg mb-2">
+      <h3 class="font-bold text-xl">Mel</h3>
+      <p>1 ano • ♀️</p>
+      <button class="mt-2 bg-amigoPeludo-500 dark:bg-amigoPeludo-800 text-white px-4 py-2 rounded-lg hover:bg-amigoPeludo-600 dark:hover:bg-amigoPeludo-500 transition-all">Adotar</button>
+    </div>
+
+    <!-- adiciona mais pets aqui seguindo o mesmo modelo -->
+  </section>
+</main>
+
+<footer class="bg-gray-100 dark:bg-gray-900 text-center p-4 mt-auto shadow-[0_10px_20px_rgba(0,0,0,0.4)]">
+  <p class="text-sm text-gray-600 dark:text-gray-300">© 2025 Amigo Peludo - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
