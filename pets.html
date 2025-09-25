@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/script/script.js"></script>
+    
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              fundo: "#0f172a",
+              texto: "#f1f5f9",
+              amigoPeludo: {
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                300: "#16a34b",
+                800: "#14532d",
+              },
+            },
+            fontFamily: {
+              nunito: ["Nunito", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    
+    <title>Pets - Amigo Peludo</title>
+  </head>
+  <body class="font-nunito bg-white dark:bg-fundo text-black dark:text-texto min-h-screen flex flex-col">
+
+    <header class="bg-amigoPeludo-600 dark:bg-amigoPeludo-800 text-white p-4 shadow-[0_10px_10px_-10px_rgba(0,0,0,0.4)]">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold font-[Quicksand]">Amigo Peludo</h1>
+        <div class="relative flex items-center gap-4">
+          <nav class="hidden sm:flex sm:space-x-6 sm:items-center" aria-label="Menu de navegação">
+            <a href="index.html" class="hover:underline text-lg">Início</a>
+            <a href="sobre.html" class="hover:underline text-lg">Sobre</a>
+            <a href="pets.html" class="hover:underline text-lg">Pets</a>
+            <a href="contato.html" class="hover:underline text-lg">Contato</a>
+          </nav>
+          <button id="trdThemeBtn" class="hidden sm:block text-white" aria-label="Alternar tema">
+            <img id="themeIcon" src="./assets/img/modo-claro.png" alt="Tema escuro" width="24" height="24" />
+          </button>
+          <div class="flex sm:hidden items-center gap-4">
+            <button id="trdThemeBtnMobile" class="text-white" aria-label="Alternar tema">
+              <img id="themeIconMobile" src="./assets/img/modo-claro.png" alt="Tema escuro" width="24" height="24" />
+            </button>
+            <button id="menuToggle" class="text-white text-2xl" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu de navegação">☰</button>
+          </div>
+          <nav id="mobileMenu" class="hidden absolute top-full right-0 mt-2 w-44 flex flex-col space-y-2 bg-green-700/80 dark:bg-green-900/80 backdrop-blur-md text-white text-right p-3 rounded-md shadow-lg transition-all duration-300 sm:hidden z-50" aria-label="Menu de navegação">
+            <a href="index.html" class="hover:underline text-base">Início</a>
+            <a href="sobre.html" class="hover:underline text-base">Sobre</a>
+            <a href="pets.html" class="hover:underline text-base">Pets</a>
+            <a href="contato.html" class="hover:underline text-base">Contato</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow p-6">
+        <section class="max-w-6xl mx-auto py-12">
+            <h2 class="text-amigoPeludo-500 dark:text-amigoPeludo-800 font-bold text-4xl text-center mb-8">Nossos Pets para Adoção</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                    <img src="assets/img/Luna.png" alt="Luna" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl mt-2">Luna</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">2 anos • ♀️</p>
+                        <a href="#" class="inline-block mt-4 bg-amigoPeludo-500 text-white px-4 py-2 rounded-lg hover:bg-amigoPeludo-600">
+                            Adotar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                    <img src="assets/img/Thor.png" alt="Thor" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-xl mt-2">Thor</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">3 anos • ♂️</p>
+                        <a href="#" class="inline-block mt-4 bg-amigoPeludo-500 text-white px-4 py-2 rounded-lg hover:bg-amigoPeludo-600">
+                            Adotar
+                        </a>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-900 text-center p-4 mt-auto shadow-[0_10px_20px_rgba(0,0,0,0.40)]">
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        © 2025 Amigo Peludo - Todos os direitos reservados
+      </p>
+    </footer>
+
+  </body>
+</html>
